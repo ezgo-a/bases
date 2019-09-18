@@ -729,7 +729,11 @@ class Equiv(Pocket):
     def choice(self):
         idx = randrange(len(self.obj))
         return self.obj[idx]
-
+    
+    def imd(self, start_column='auto'):
+        choose_one = self.choice()
+        return choose_one.imd(start_column)
+    
     def save(self, fp):
         fp.write('E'.encode('utf-8'))
         length = len(self.obj)
